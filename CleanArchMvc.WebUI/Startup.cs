@@ -1,3 +1,4 @@
+using CleanArchMvc.Infra.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -17,12 +18,14 @@ namespace CleanArchMvc.WebUI {
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // Usar esse método para adicionar serviços.
         public void ConfigureServices(IServiceCollection services) {
+
+            services.AddInfrastructure(Configuration);
             services.AddControllersWithViews();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // Usar esse método para configurar a pipeline de requisições HTTP
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
