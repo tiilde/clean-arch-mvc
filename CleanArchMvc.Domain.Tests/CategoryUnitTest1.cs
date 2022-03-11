@@ -30,7 +30,7 @@ namespace CleanArchMvc.Domain.Tests {
             Action action = () => new Category(1, "Ca");
             action.Should()
                 .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
-                    .WithMessage("The name must have at least 3 characters");
+                    .WithMessage("Name too short, minimum 3 characters");
         }
 
         [Fact]

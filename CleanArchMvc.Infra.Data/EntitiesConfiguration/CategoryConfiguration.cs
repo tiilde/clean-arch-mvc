@@ -12,6 +12,7 @@ namespace CleanArchMvc.Infra.Data.EntitiesConfiguration {
 
             // usando fluente API para popular a tabela com dados iniciais
             builder.HasData(
+
                 new Category(1, "Material Escolar"),
                 new Category(2, "Eletrônicos"),
                 new Category(3, "Acessórios")
