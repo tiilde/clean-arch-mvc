@@ -5,8 +5,6 @@ using CleanArchMvc.Domain.Entities;
 using CleanArchMvc.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace CleanArchMvc.Application.Services {
@@ -25,20 +23,20 @@ namespace CleanArchMvc.Application.Services {
         }
 
         public async Task<IEnumerable<ProductDTO>> GetProducts() {
-            
+
             var productsEntity = await _productRepository.GetProductAsync();
-            return _mapper.Map<IEnumerable<ProductDTO>>(productsEntity); 
+            return _mapper.Map<IEnumerable<ProductDTO>>(productsEntity);
         }
 
         public async Task<ProductDTO> GetById(int? id) {
-            
+
             var productEntity = await _productRepository.GetByIdAsync(id);
             return _mapper.Map<ProductDTO>(productEntity);
         }
 
         public async Task<ProductDTO> GetProductCategory(int? id) {
-            
-            var productEntity =  await _productRepository.GetProductCategoryAsync(id);
+
+            var productEntity = await _productRepository.GetProductCategoryAsync(id);
             return _mapper.Map<ProductDTO>(productEntity);
         }
 
