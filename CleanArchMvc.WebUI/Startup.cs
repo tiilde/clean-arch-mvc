@@ -22,6 +22,7 @@ namespace CleanArchMvc.WebUI {
 
         // Usar esse método para configurar a pipeline de requisições HTTP
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             }
@@ -40,7 +41,7 @@ namespace CleanArchMvc.WebUI {
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Products}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
